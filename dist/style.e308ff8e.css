@@ -10,7 +10,7 @@
     background: black;
     padding: 0;
     background: cover;
-    background-image: url(images/skullsBG.png);
+    background-image: url(/skullsBG.9eca26a6.png);
     background-color: #000000; /* Used if the image is unavailable */
     height: 450px; /* You must set a specified height */
     background-position: center; /* Center the image */
@@ -35,3 +35,5 @@
     color: aliceblue;
     line-height: normal;
 }
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
