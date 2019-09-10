@@ -15,61 +15,63 @@
 
     <div class="top">
 
-      <div id='headText'>
-      <h1>SKULL & BONES</h1>
-      <h4>The absolute Tic Tac Toe game</h4>
-      <h3>Play if you dare...</h3>
-      </div>
+          <div id='headText'>
+          <h1>SKULL & BONES</h1>
+          <h4>The absolute Tic Tac Toe game</h4>
+          <h3>Play if you dare...</h3>
+          </div>
 
-    </div>
-
-    <div class="scorePanel">
-        <div>
-          <h1>Team Skull Score:</h1><h1 id="skullScore">0</h1>
-          <h1>Team Bones Score:</h1><h1 id="bonesScore">0</h1>
         </div>
+
+        <div class="scorePanel">
+            <div>
+              <h1>Team Skull Score:</h1><h1 id="skullScore">0</h1>
+              <h1>Team Bones Score:</h1><h1 id="bonesScore">0</h1>
+            </div>
+        </div>
+
+        <div class="turnCount">
+          <h1 id="round"></h1>      
+          <h1 id="skullTurn">Skull team turn</h1>
+          <h1 id="bonesTurn">Bones team turn</h1>
+          <h1 id="winning"></h1>
+          <h1 id="noTurn">Start a new game...</h1>
+        </div>
+
+        <div class="gameCanvas">
+
+          <div class="row">
+            <div class='field' id='fieldA'></div>
+            <div class='field' id='fieldB'></div>
+            <div class='field' id='fieldC'></div>
+          </div>
+
+          <div class="row">
+            <div class='field' id='fieldD'></div>
+            <div class='field' id='fieldE'></div>
+            <div class='field' id='fieldF'></div>
+          </div>
+
+          <div class="row">
+            <div class='field' id='fieldG'></div>
+            <div class='field' id='fieldH'></div>
+            <div class='field' id='fieldI'></div>
+          </div>
+
+        </div>
+
+        <div class="winMessage">
+          
+          <div id="OWins">
+            <h2>TEAM SKULL - ROUND WON!</h2>
+          </div>      
+          
+          <div id="XWins">
+            <h2>TEAM BONES - ROUND WON!</h2>
+          </div>
     </div>
 
-    <div class="turnCount">
-      <h1 id="skullTurn">Skull team turn</h1>
-      <h1 id="bonesTurn">Bones team turn</h1>
-      <h1 id="noTurn">Start a new game...</h1>
-    </div>
-
-    <div class="gameCanvas">
-
-      <div class="row">
-        <div class='field' id='fieldA'></div>
-        <div class='field' id='fieldB'></div>
-        <div class='field' id='fieldC'></div>
-      </div>
-
-      <div class="row">
-        <div class='field' id='fieldD'></div>
-        <div class='field' id='fieldE'></div>
-        <div class='field' id='fieldF'></div>
-      </div>
-
-      <div class="row">
-        <div class='field' id='fieldG'></div>
-        <div class='field' id='fieldH'></div>
-        <div class='field' id='fieldI'></div>
-      </div>
-
-    </div>
-
-    <div class="winMessage">
-      
-      <div id="OWins">
-        <h2>TEAM SKULL WINS!</h2>
-      </div>      
-      
-      <div id="XWins">
-        <h2>TEAM BONES WINS!</h2>
-      </div>
-    </div>
-
-    <button class="playAgain">Play Again</button>
+    <button class="playAgain">Next Round</button>
     <button class="restart">Restart</button>
 
   </body>
