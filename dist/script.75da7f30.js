@@ -233,13 +233,13 @@ $(document).ready(function () {
   $("#fieldA").click(function () {
     if ($("#fieldA").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldA").text('X').hide().slideDown(700);
+        $("#fieldA").text('c').hide().slideDown(700);
         qA += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldA").text('O').hide().slideDown(700);
+        $("#fieldA").text('B').hide().slideDown(700);
         qA -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
@@ -252,13 +252,13 @@ $(document).ready(function () {
   $("#fieldB").click(function () {
     if ($("#fieldB").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldB").text('X').hide().slideDown(700);
+        $("#fieldB").text('c').hide().slideDown(700);
         qB += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldB").text('O').hide().slideDown(700);
+        $("#fieldB").text('B').hide().slideDown(700);
         qB -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
@@ -271,13 +271,13 @@ $(document).ready(function () {
   $("#fieldC").click(function () {
     if ($("#fieldC").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldC").text('X').hide().slideDown(700);
+        $("#fieldC").text('c').hide().slideDown(700);
         qC += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldC").text('O').hide().slideDown(700);
+        $("#fieldC").text('B').hide().slideDown(700);
         qC -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
@@ -290,13 +290,13 @@ $(document).ready(function () {
   $("#fieldD").click(function () {
     if ($("#fieldD").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldD").text('X').hide().slideDown(700);
+        $("#fieldD").text('c').hide().slideDown(700);
         qD += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldD").text('O').hide().slideDown(700);
+        $("#fieldD").text('B').hide().slideDown(700);
         qD -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
@@ -309,13 +309,13 @@ $(document).ready(function () {
   $("#fieldE").click(function () {
     if ($("#fieldE").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldE").text('X').hide().slideDown(700);
+        $("#fieldE").text('c').hide().slideDown(700);
         qE += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldE").text('O').hide().slideDown(700);
+        $("#fieldE").text('B').hide().slideDown(700);
         qE -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
@@ -328,13 +328,13 @@ $(document).ready(function () {
   $("#fieldF").click(function () {
     if ($("#fieldF").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldF").text('X').hide().slideDown(700);
+        $("#fieldF").text('c').hide().slideDown(700);
         qF += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldF").text('O').hide().slideDown(700);
+        $("#fieldF").text('B').hide().slideDown(700);
         qF -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
@@ -347,13 +347,13 @@ $(document).ready(function () {
   $("#fieldG").click(function () {
     if ($("#fieldG").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldG").text('X').hide().slideDown(700);
+        $("#fieldG").text('c').hide().slideDown(700);
         qG += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldG").text('O').hide().slideDown(700);
+        $("#fieldG").text('B').hide().slideDown(700);
         qG -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
@@ -366,13 +366,13 @@ $(document).ready(function () {
   $("#fieldH").click(function () {
     if ($("#fieldH").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldH").text('X').hide().slideDown(700);
+        $("#fieldH").text('c').hide().slideDown(700);
         qH += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldH").text('O').hide().slideDown(700);
+        $("#fieldH").text('B').hide().slideDown(700);
         qH -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
@@ -385,13 +385,13 @@ $(document).ready(function () {
   $("#fieldI").click(function () {
     if ($("#fieldI").text() == "") {
       if (turnCounter === 1) {
-        $("#fieldI").text('X').hide().slideDown(700);
+        $("#fieldI").text('c').hide().slideDown(700);
         qI += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldI").text('O').hide().slideDown(700);
+        $("#fieldI").text('B').hide().slideDown(700);
         qI -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;

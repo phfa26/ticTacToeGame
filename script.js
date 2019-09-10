@@ -115,14 +115,14 @@ $(document).ready(function() {
 
         if ($( "#fieldA" ).text() == ""){
 
-            if (turnCounter === 1){ $( "#fieldA" ).text('X').hide().slideDown(700);
+            if (turnCounter === 1){ $( "#fieldA" ).text('c').hide().slideDown(700);
             qA +=1;
             turnCounter = turnCounter*(-1);
             fieldCounter++;
             scoreCheck();
             }
 
-            else if (turnCounter === -1){ $( "#fieldA" ).text('O').hide().slideDown(700);
+            else if (turnCounter === -1){ $( "#fieldA" ).text('B').hide().slideDown(700);
             qA -=1;
             turnCounter = turnCounter*(-1);
             fieldCounter++;
@@ -139,14 +139,14 @@ $(document).ready(function() {
 
         if ($( "#fieldB" ).text() == ""){
     
-                if (turnCounter === 1){ $( "#fieldB" ).text('X').hide().slideDown(700);
+                if (turnCounter === 1){ $( "#fieldB" ).text('c').hide().slideDown(700);
                 qB +=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
                 scoreCheck();
                 }   
 
-                else if (turnCounter === -1){ $( "#fieldB" ).text('O').hide().slideDown(700);
+                else if (turnCounter === -1){ $( "#fieldB" ).text('B').hide().slideDown(700);
                 qB -=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
@@ -162,14 +162,14 @@ $(document).ready(function() {
 
         if ($( "#fieldC" ).text() == ""){
     
-                if (turnCounter === 1){ $( "#fieldC" ).text('X').hide().slideDown(700);
+                if (turnCounter === 1){ $( "#fieldC" ).text('c').hide().slideDown(700);
                 qC +=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
                 scoreCheck();
                 }
     
-                else if (turnCounter === -1){ $( "#fieldC" ).text('O').hide().slideDown(700);
+                else if (turnCounter === -1){ $( "#fieldC" ).text('B').hide().slideDown(700);
                 qC -=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
@@ -185,14 +185,14 @@ $(document).ready(function() {
 
         if ($( "#fieldD" ).text() == ""){
     
-                if (turnCounter === 1){ $( "#fieldD" ).text('X').hide().slideDown(700);
+                if (turnCounter === 1){ $( "#fieldD" ).text('c').hide().slideDown(700);
                 qD +=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
                 scoreCheck();
                 }
     
-                else if (turnCounter === -1){ $( "#fieldD" ).text('O').hide().slideDown(700);
+                else if (turnCounter === -1){ $( "#fieldD" ).text('B').hide().slideDown(700);
                 qD -=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
@@ -208,14 +208,14 @@ $(document).ready(function() {
 
         if ($( "#fieldE" ).text() == ""){
     
-                if (turnCounter === 1){ $( "#fieldE" ).text('X').hide().slideDown(700);
+                if (turnCounter === 1){ $( "#fieldE" ).text('c').hide().slideDown(700);
                 qE +=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
                 scoreCheck();
                 }
     
-                else if (turnCounter === -1){ $( "#fieldE" ).text('O').hide().slideDown(700);
+                else if (turnCounter === -1){ $( "#fieldE" ).text('B').hide().slideDown(700);
                 qE -=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
@@ -231,14 +231,14 @@ $(document).ready(function() {
 
         if ($( "#fieldF" ).text() == ""){
     
-                if (turnCounter === 1){ $( "#fieldF" ).text('X').hide().slideDown(700);
+                if (turnCounter === 1){ $( "#fieldF" ).text('c').hide().slideDown(700);
                 qF +=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
                 scoreCheck();
                 }
     
-                else if (turnCounter === -1){ $( "#fieldF" ).text('O').hide().slideDown(700);
+                else if (turnCounter === -1){ $( "#fieldF" ).text('B').hide().slideDown(700);
                 qF -=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
@@ -254,14 +254,14 @@ $(document).ready(function() {
 
         if ($( "#fieldG" ).text() == ""){
     
-                if (turnCounter === 1){ $( "#fieldG" ).text('X').hide().slideDown(700);
+                if (turnCounter === 1){ $( "#fieldG" ).text('c').hide().slideDown(700);
                 qG +=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
                 scoreCheck();
                 }
     
-                else if (turnCounter === -1){ $( "#fieldG" ).text('O').hide().slideDown(700);
+                else if (turnCounter === -1){ $( "#fieldG" ).text('B').hide().slideDown(700);
                 qG -=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
@@ -277,14 +277,14 @@ $(document).ready(function() {
 
         if ($( "#fieldH" ).text() == ""){
     
-                if (turnCounter === 1){ $( "#fieldH" ).text('X').hide().slideDown(700);
+                if (turnCounter === 1){ $( "#fieldH" ).text('c').hide().slideDown(700);
                 qH +=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
                 scoreCheck();
                 }
     
-                else if (turnCounter === -1){ $( "#fieldH" ).text('O').hide().slideDown(700);
+                else if (turnCounter === -1){ $( "#fieldH" ).text('B').hide().slideDown(700);
                 qH -=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
@@ -300,14 +300,14 @@ $(document).ready(function() {
 
         if ($( "#fieldI" ).text() == ""){
     
-                if (turnCounter === 1){ $( "#fieldI" ).text('X').hide().slideDown(700);
+                if (turnCounter === 1){ $( "#fieldI" ).text('c').hide().slideDown(700);
                 qI +=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
                 scoreCheck();
                 }
     
-                else if (turnCounter === -1){ $( "#fieldI" ).text('O').hide().slideDown(700);
+                else if (turnCounter === -1){ $( "#fieldI" ).text('B').hide().slideDown(700);
                 qI -=1;
                 turnCounter = turnCounter*(-1);
                 fieldCounter++;
