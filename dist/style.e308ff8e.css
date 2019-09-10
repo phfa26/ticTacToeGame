@@ -2,7 +2,10 @@
 .top{
     display: block;
     text-align: center;
-    background: orange;
+    background: black;
+    font-family: xbones;
+    font-size: 32px;
+   
 }
 
 .gameCanvas{
@@ -17,6 +20,7 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
     width: 450px;
+    margin: auto;
 
 }
 .row{
@@ -34,6 +38,43 @@
     padding-bottom: 20px;
     color: aliceblue;
     line-height: normal;
+}
+
+.scorePanel{
+    background-color: lightblue;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(148, 148,148,0.2);
+    font-family: xbones;
+    font-size: 28px;
+}
+
+
+#round{
+    background-color: lightgray;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(148, 148,148,0.2);
+    font-family: xbones;
+    font-size: 28px;
+
+}
+
+.turnCount{
+    font-family: xbones;
+    font-size: 28px;
+}
+
+#winmessage{
+    font-family: xbones;
+    font-size: 28px;
+}
+
+@font-face{ 
+	font-family: 'xbones';
+	src: url('/xbones3ditalic-8pgj-webfont.fbfc655d.woff');
+	src: url('/xbones3ditalic-8pgj-webfont.fbfc655d.woff') format('woff'),
+
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

@@ -131,11 +131,14 @@ var turnCounter = 1;
 var scoreX = 0;
 var scoreO = 0;
 var lastWin = 0;
+var roundCounter = 0;
+var fieldCounter = 0;
 
 function scoreCheck() {
   if (qA + qB + qC === 3 || qA + qD + qG === 3 || qA + qE + qI === 3 || qB + qE + qH === 3 || qC + qF + qI === 3 || qD + qE + qF === 3 || qG + qH + qI === 3 || qG + qE + qC === 3) {
     $("#XWins").slideDown();
     scoreX++;
+    roundCounter++;
     turnCounter = 0; //Ends game
 
     lastWin = 1;
@@ -146,14 +149,57 @@ function scoreCheck() {
   if (qA + qB + qC === -3 || qA + qD + qG === -3 || qA + qE + qI === -3 || qB + qE + qH === -3 || qC + qF + qI === -3 || qD + qE + qF === -3 || qG + qH + qI === -3 || qG + qE + qC === -3) {
     $("#OWins").slideDown();
     scoreO++;
+    roundCounter++;
     turnCounter = 0; //Ends game
 
     lastWin = -1;
     $(".playAgain").fadeIn(1000);
     $("#skullScore").text("".concat(scoreO));
   }
-} //scoreCheck();
 
+  if (fieldCounter == 9) {
+    $("#winning").text("CAT'S GAME!").show(500);
+    roundCounter++;
+    turnCounter = 0; //Ends game
+
+    $(".playAgain").fadeIn(1000);
+  }
+
+  if (scoreX == 2 || roundCounter == 3 && scoreX > scoreO) {
+    $("#winning").text("TEAM BONES WINS!").show(500);
+    turnCounter = 0; //Ends game
+
+    $(".playAgain").hide();
+  }
+
+  if (scoreO == 2 || roundCounter == 3 && scoreX < scoreO) {
+    $("#winning").text("TEAM SKULL WINS!").show(500);
+    turnCounter = 0; //Ends game
+
+    $(".playAgain").hide();
+  }
+
+  if (roundCounter == 3 && scoreX == scoreO) {
+    $("#winning").text("OH NO! Is it a draw? Is it a tie? NAH... IT IS \"CAT'S GAME!\"").show(500);
+    $(".playAgain").hide();
+  }
+}
+
+function roundDisplay() {
+  var round = roundCounter;
+
+  if (round == 0) {
+    $("#round").text('First Round').fadeIn();
+  }
+
+  if (round == 1) {
+    $("#round").text("Second Round").fadeIn();
+  }
+
+  if (round == 2) {
+    $("#round").text("Third Round").fadeIn();
+  }
+}
 
 function turn() {
   if (turnCounter === -1) {
@@ -183,22 +229,25 @@ $(document).ready(function () {
   $("#noTurn").hide();
   $(".playAgain").hide();
   turn();
+  roundDisplay();
   $("#fieldA").click(function () {
     if ($("#fieldA").text() == "") {
       if (turnCounter === 1) {
         $("#fieldA").text('X').hide().slideDown(700);
         qA += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldA").text('O').hide().slideDown(700);
         qA -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
-
-      turn();
     }
+
+    turn();
   });
   $("#fieldB").click(function () {
     if ($("#fieldB").text() == "") {
@@ -206,11 +255,13 @@ $(document).ready(function () {
         $("#fieldB").text('X').hide().slideDown(700);
         qB += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldB").text('O').hide().slideDown(700);
         qB -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
     }
@@ -223,11 +274,13 @@ $(document).ready(function () {
         $("#fieldC").text('X').hide().slideDown(700);
         qC += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldC").text('O').hide().slideDown(700);
         qC -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
     }
@@ -240,11 +293,13 @@ $(document).ready(function () {
         $("#fieldD").text('X').hide().slideDown(700);
         qD += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldD").text('O').hide().slideDown(700);
         qD -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
     }
@@ -257,11 +312,13 @@ $(document).ready(function () {
         $("#fieldE").text('X').hide().slideDown(700);
         qE += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldE").text('O').hide().slideDown(700);
         qE -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
     }
@@ -274,11 +331,13 @@ $(document).ready(function () {
         $("#fieldF").text('X').hide().slideDown(700);
         qF += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldF").text('O').hide().slideDown(700);
         qF -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
     }
@@ -291,11 +350,13 @@ $(document).ready(function () {
         $("#fieldG").text('X').hide().slideDown(700);
         qG += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldG").text('O').hide().slideDown(700);
         qG -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
     }
@@ -308,11 +369,13 @@ $(document).ready(function () {
         $("#fieldH").text('X').hide().slideDown(700);
         qH += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldH").text('O').hide().slideDown(700);
         qH -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
     }
@@ -325,11 +388,13 @@ $(document).ready(function () {
         $("#fieldI").text('X').hide().slideDown(700);
         qI += 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
         $("#fieldI").text('O').hide().slideDown(700);
         qI -= 1;
         turnCounter = turnCounter * -1;
+        fieldCounter++;
         scoreCheck();
       }
     }
@@ -359,6 +424,7 @@ $(document).ready(function () {
     $("#XWins").slideUp();
     $("#OWins").slideUp();
     $(".playAgain").fadeOut(1000);
+    $("#winning").fadeOut(1000);
 
     if (lastWin === 1) {
       turnCounter = -1;
@@ -368,8 +434,14 @@ $(document).ready(function () {
       turnCounter = 1;
     }
 
+    if (lastWin === 0) {
+      turnCounter = -1;
+    }
+
     lastWin = 0;
+    fieldCounter = 0;
     turn();
+    roundDisplay();
   });
   $(".restart").click(function () {
     $("#fieldA").text("");
@@ -394,13 +466,17 @@ $(document).ready(function () {
     $("#XWins").slideUp();
     $("#OWins").slideUp();
     $(".playAgain").fadeOut(1000);
+    $("#winning").fadeOut(1000);
     turnCounter = 1;
     scoreX = 0;
     scoreO = 0;
     lastWin = 0;
+    fieldCounter = 0;
+    roundCounter = 0;
     $("#bonesScore").text("".concat(scoreX));
     $("#skullScore").text("".concat(scoreX));
     turn();
+    roundDisplay();
   });
 });
 },{}],"../../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -431,7 +507,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50909" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49442" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
