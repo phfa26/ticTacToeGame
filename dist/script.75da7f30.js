@@ -118,15 +118,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"script.js":[function(require,module,exports) {
-var qA = 0;
-var qB = 0;
-var qC = 0;
-var qD = 0;
-var qE = 0;
-var qF = 0;
-var qG = 0;
-var qH = 0;
-var qI = 0;
+var clickCounter = {
+  qA: 0,
+  qB: 0,
+  qC: 0,
+  qD: 0,
+  qE: 0,
+  qF: 0,
+  qG: 0,
+  qH: 0,
+  qI: 0
+};
 var turnCounter = 1;
 var scoreX = 0;
 var scoreO = 0;
@@ -135,7 +137,7 @@ var roundCounter = 0;
 var fieldCounter = 0;
 
 function scoreCheck() {
-  if (qA + qB + qC === 3 || qA + qD + qG === 3 || qA + qE + qI === 3 || qB + qE + qH === 3 || qC + qF + qI === 3 || qD + qE + qF === 3 || qG + qH + qI === 3 || qG + qE + qC === 3) {
+  if (clickCounter.qA + clickCounter.qB + clickCounter.qC === 3 || clickCounter.qA + clickCounter.qD + clickCounter.qG === 3 || clickCounter.qA + clickCounter.qE + clickCounter.qI === 3 || clickCounter.qB + clickCounter.qE + clickCounter.qH === 3 || clickCounter.qC + clickCounter.qF + clickCounter.qI === 3 || clickCounter.qD + clickCounter.qE + clickCounter.qF === 3 || clickCounter.qG + clickCounter.qH + clickCounter.qI === 3 || clickCounter.qG + clickCounter.qG + clickCounter.qC === 3) {
     $("#XWins").slideDown();
     scoreX++;
     roundCounter++;
@@ -146,7 +148,7 @@ function scoreCheck() {
     $("#bonesScore").text("".concat(scoreX));
   }
 
-  if (qA + qB + qC === -3 || qA + qD + qG === -3 || qA + qE + qI === -3 || qB + qE + qH === -3 || qC + qF + qI === -3 || qD + qE + qF === -3 || qG + qH + qI === -3 || qG + qE + qC === -3) {
+  if (clickCounter.qA + clickCounter.qB + clickCounter.qC === -3 || clickCounter.qA + clickCounter.qD + clickCounter.qG === -3 || clickCounter.qA + clickCounter.qE + clickCounter.qI === -3 || clickCounter.qB + clickCounter.qE + clickCounter.qH === -3 || clickCounter.qC + clickCounter.qF + clickCounter.qI === -3 || clickCounter.qD + clickCounter.qE + clickCounter.qF === -3 || clickCounter.qG + clickCounter.qH + clickCounter.qI === -3 || clickCounter.qG + clickCounter.qG + clickCounter.qC === -3) {
     $("#OWins").slideDown();
     scoreO++;
     roundCounter++;
@@ -230,169 +232,31 @@ $(document).ready(function () {
   $(".playAgain").hide();
   turn();
   roundDisplay();
-  $("#fieldA").click(function () {
-    if ($("#fieldA").text() == "") {
+  $(".field").click(function () {
+    if ($(this).text() == "") {
       if (turnCounter === 1) {
-        $("#fieldA").text('c').hide().slideDown(700);
-        qA += 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      } else if (turnCounter === -1) {
-        $("#fieldA").text('B').hide().slideDown(700);
-        qA -= 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      }
-    }
+        $(this).text('c').hide().slideDown(700);
+        var qX = this.id;
 
-    turn();
-  });
-  $("#fieldB").click(function () {
-    if ($("#fieldB").text() == "") {
-      if (turnCounter === 1) {
-        $("#fieldB").text('c').hide().slideDown(700);
-        qB += 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      } else if (turnCounter === -1) {
-        $("#fieldB").text('B').hide().slideDown(700);
-        qB -= 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      }
-    }
+        for (key in clickCounter) {
+          if (key === qX) {
+            clickCounter[key] += 1;
+          }
+        }
 
-    turn();
-  });
-  $("#fieldC").click(function () {
-    if ($("#fieldC").text() == "") {
-      if (turnCounter === 1) {
-        $("#fieldC").text('c').hide().slideDown(700);
-        qC += 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $("#fieldC").text('B').hide().slideDown(700);
-        qC -= 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      }
-    }
+        $(this).text('B').hide().slideDown(700);
+        var _qX = this.id;
 
-    turn();
-  });
-  $("#fieldD").click(function () {
-    if ($("#fieldD").text() == "") {
-      if (turnCounter === 1) {
-        $("#fieldD").text('c').hide().slideDown(700);
-        qD += 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      } else if (turnCounter === -1) {
-        $("#fieldD").text('B').hide().slideDown(700);
-        qD -= 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      }
-    }
+        for (key in clickCounter) {
+          if (key === _qX) {
+            clickCounter[key] -= 1;
+          }
+        }
 
-    turn();
-  });
-  $("#fieldE").click(function () {
-    if ($("#fieldE").text() == "") {
-      if (turnCounter === 1) {
-        $("#fieldE").text('c').hide().slideDown(700);
-        qE += 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      } else if (turnCounter === -1) {
-        $("#fieldE").text('B').hide().slideDown(700);
-        qE -= 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      }
-    }
-
-    turn();
-  });
-  $("#fieldF").click(function () {
-    if ($("#fieldF").text() == "") {
-      if (turnCounter === 1) {
-        $("#fieldF").text('c').hide().slideDown(700);
-        qF += 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      } else if (turnCounter === -1) {
-        $("#fieldF").text('B').hide().slideDown(700);
-        qF -= 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      }
-    }
-
-    turn();
-  });
-  $("#fieldG").click(function () {
-    if ($("#fieldG").text() == "") {
-      if (turnCounter === 1) {
-        $("#fieldG").text('c').hide().slideDown(700);
-        qG += 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      } else if (turnCounter === -1) {
-        $("#fieldG").text('B').hide().slideDown(700);
-        qG -= 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      }
-    }
-
-    turn();
-  });
-  $("#fieldH").click(function () {
-    if ($("#fieldH").text() == "") {
-      if (turnCounter === 1) {
-        $("#fieldH").text('c').hide().slideDown(700);
-        qH += 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      } else if (turnCounter === -1) {
-        $("#fieldH").text('B').hide().slideDown(700);
-        qH -= 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      }
-    }
-
-    turn();
-  });
-  $("#fieldI").click(function () {
-    if ($("#fieldI").text() == "") {
-      if (turnCounter === 1) {
-        $("#fieldI").text('c').hide().slideDown(700);
-        qI += 1;
-        turnCounter = turnCounter * -1;
-        fieldCounter++;
-        scoreCheck();
-      } else if (turnCounter === -1) {
-        $("#fieldI").text('B').hide().slideDown(700);
-        qI -= 1;
         turnCounter = turnCounter * -1;
         fieldCounter++;
         scoreCheck();
@@ -402,25 +266,12 @@ $(document).ready(function () {
     turn();
   });
   $(".playAgain").click(function () {
-    $("#fieldA").text("");
-    $("#fieldB").text('');
-    $("#fieldC").text('');
-    $("#fieldD").text('');
-    $("#fieldE").text('');
-    $("#fieldF").text('');
-    $("#fieldG").text('');
-    $("#fieldH").text('');
-    $("#fieldI").text('');
-    qA = 0;
-    qB = 0;
-    qC = 0;
-    qD = 0;
-    qE = 0;
-    qE = 0;
-    qF = 0;
-    qG = 0;
-    qH = 0;
-    qI = 0;
+    $(".field").text("");
+
+    for (key in clickCounter) {
+      clickCounter[key] = 0;
+    }
+
     $("#XWins").slideUp();
     $("#OWins").slideUp();
     $(".playAgain").fadeOut(1000);
@@ -444,25 +295,12 @@ $(document).ready(function () {
     roundDisplay();
   });
   $(".restart").click(function () {
-    $("#fieldA").text("");
-    $("#fieldB").text('');
-    $("#fieldC").text('');
-    $("#fieldD").text('');
-    $("#fieldE").text('');
-    $("#fieldF").text('');
-    $("#fieldG").text('');
-    $("#fieldH").text('');
-    $("#fieldI").text('');
-    qA = 0;
-    qB = 0;
-    qC = 0;
-    qD = 0;
-    qE = 0;
-    qE = 0;
-    qF = 0;
-    qG = 0;
-    qH = 0;
-    qI = 0;
+    $(".field").text("");
+
+    for (key in clickCounter) {
+      clickCounter[key] = 0;
+    }
+
     $("#XWins").slideUp();
     $("#OWins").slideUp();
     $(".playAgain").fadeOut(1000);
@@ -507,7 +345,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49442" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49534" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
