@@ -15,26 +15,26 @@
 <div class="maincontent">
     <div class="top">
           <div id="headText">
-          <h1 color="ligthgray">SKULL & BONES</h1>
-          <h4>The absolute Tic Tac Toe game</h4>
-          <h3>Play if you dare...</h3>
+          <h1 color="ligthgray">SKULLS & BONES</h1>
+          <h3>The absolute Tic Tac Toe game</h3>
           </div>
 
         </div>
 
-        <div class="scorePanel">
-            <div>
-              <h1>Team Skull Score:</h1><h1 id="skullScore">0</h1>
-              <h1>Team Bones Score:</h1><h1 id="bonesScore">0</h1>
-            </div>
+
+        <div class="scorePanel" id="score1">
+          <h1>Team Skulls Score:</h1><h1 id="skullScore">0</h1>
+        </div>
+        <div class="scorePanel" id="score2">
+          <h1>Team Bones Score:</h1><h1 id="bonesScore">0</h1>
         </div>
 
         <div class="turnCount">
           <h1 id="round"></h1>      
-          <h1 id="skullTurn">Skull team turn</h1>
+          <h1 id="skullTurn">Skulls team turn</h1>
           <h1 id="bonesTurn">Bones team turn</h1>
           <h1 id="winning"></h1>
-          <h1 id="noTurn">Start a new game...</h1>
+          <h1 id="noTurn">Start a new round...</h1>
         </div>
 
         <div class="gameCanvas">
@@ -62,7 +62,7 @@
         <div class="winMessage">
           
           <div id="OWins">
-            <h2>TEAM SKULL - ROUND WON!</h2>
+            <h2>TEAM SKULLS - ROUND WON!</h2>
           </div>      
           
           <div id="XWins">
@@ -70,8 +70,9 @@
           </div>
     </div>
   
-    <button class="playAgain">Next Round</button>
-    <button class="restart">Restart</button>
+    <button type="button" class="playAgain btn btn-secondary btn-lg">Next Round</button>
+    <button type="button" class="restart btn btn-secondary btn-lg">Restart</button>
+
   </div>
   </body>
 

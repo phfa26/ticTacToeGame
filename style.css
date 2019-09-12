@@ -3,6 +3,13 @@
     background-color: #000000;
     color: white;
     text-align: center;
+    min-height: 1080px;
+    height: auto;
+    min-width: 450px    ;
+}
+
+h1{
+    font-size: 50px;
 }
 
 .top{
@@ -11,7 +18,13 @@
     background: black;
     font-family: xbones;
     color: white;
-    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.top h1{
+    font-size: 70px;
+    font-style: italic;
+    text-decoration: underline goldenrod;
 }
 
 .gameCanvas{
@@ -48,25 +61,46 @@
     font-family: evil;
 }
 
-.scorePanel{
-    /* background-color: lightblue; */
-    border: 1px solid black;
+#score1{
+    border: 5px solid goldenrod;
     text-align: center;
     box-shadow: 0 8px 16px rgba(148, 148,148,0.2);
     font-family: xbones;
     font-size: 32px;
     color: white;
+    border-radius: 60px 60px 2px 2px;
+    max-width: 50%;
+    margin: 10px auto;
+}
+
+#score2{
+    border: 5px solid goldenrod;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(148, 148,148,0.2);
+    font-family: xbones;
+    font-size: 32px;
+    color: white;
+    border-radius: 2px;
+    max-width: 50%;
+    margin: 10px auto;
+    @media screen {
+        font-size: 24px;
+    }
 }
 
 
 #round{
-    background-color: lightgray;
-    border: 1px solid black;
+    background-color: rgb(0, 0, 0);
+    border: 5px solid goldenrod;
+    border-radius: 2px 2px 60px 60px;
     text-align: center;
     box-shadow: 0 8px 16px rgba(148, 148,148,0.2);
     font-family: xbones;
     font-size: 32px;
-    color: white;
+    color: red;
+    font-weight: bold;
+    max-width: 50%;
+    margin: 10px auto;
 
 }
 
@@ -78,6 +112,14 @@
 .winMessage{
     font-family: xbones;
     font-size: 28px;
+}
+
+.restart{
+    font-family: xbones;
+}
+
+.playAgain{
+    font-family: xbones;
 }
 
 @font-face{ 

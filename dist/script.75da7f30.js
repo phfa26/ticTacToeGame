@@ -175,7 +175,7 @@ function scoreCheck() {
   }
 
   if (scoreO == 2 || roundCounter == 3 && scoreX < scoreO) {
-    $("#winning").text("TEAM SKULL WINS!").show(500);
+    $("#winning").text("TEAM SKULLS WINS!").show(500);
     turnCounter = 0; //Ends game
 
     $(".playAgain").hide();
@@ -345,7 +345,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49534" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50970" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

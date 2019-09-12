@@ -59,7 +59,7 @@ function scoreCheck(){
     }
     
     if((scoreO == 2) || (roundCounter == 3 && scoreX < scoreO)){
-        $("#winning").text("TEAM SKULL WINS!").show(500);
+        $("#winning").text("TEAM SKULLS WINS!").show(500);
         turnCounter = 0; //Ends game
         $(".playAgain").hide();
     }
@@ -141,7 +141,8 @@ $(document).ready(function() {
                 scoreCheck();
             }
 
-            else if (turnCounter === -1){ $(this).text('B').hide().slideDown(700);
+            else if (turnCounter === -1){ 
+                $(this).text('B').hide().slideDown(700);
 
                 let qX = this.id
                 for(key in clickCounter){
