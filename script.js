@@ -1,14 +1,14 @@
 let clickCounter = {
 
-    qA: 0,
-    qB: 0,
-    qC: 0,
-    qD: 0,
-    qE: 0,
-    qF: 0,
-    qG: 0,
-    qH: 0,
-    qI: 0
+    fieldA: 0,
+    fieldB: 0,
+    fieldC: 0,
+    fieldD: 0,
+    fieldE: 0,
+    fieldF: 0,
+    fieldG: 0,
+    fieldH: 0,
+    fieldI: 0
 
 }
 
@@ -19,9 +19,34 @@ let lastWin = 0;
 let roundCounter = 0;
 let fieldCounter = 0;
 
+function charPick(){
+    $(".play").hide();
+    $(".start").hide();
+    $(".charPick").fadeIn();
+
+    function showStart(){
+
+        if($("#OPick").text() !== "" && $("#XPick").text() !== ""){
+            $(".start").fadeIn();
+        }
+
+    }
+
+    $(".pickX").click(function(){
+        $('#XPick').text($(this).text());
+        showStart();
+    });
+
+    $(".pickO").click(function(){
+        $('#OPick').text($(this).text());
+        showStart();
+    });
+
+}
+
 function scoreCheck(){
 
-    if(clickCounter.qA+clickCounter.qB+clickCounter.qC === 3 || clickCounter.qA+clickCounter.qD+clickCounter.qG === 3|| clickCounter.qA+clickCounter.qE+clickCounter.qI === 3 || clickCounter.qB+clickCounter.qE+clickCounter.qH === 3 || clickCounter.qC+clickCounter.qF+clickCounter.qI === 3 || clickCounter.qD+clickCounter.qE+clickCounter.qF === 3 || clickCounter.qG+clickCounter.qH+clickCounter.qI === 3 || clickCounter.qG+clickCounter.qG+clickCounter.qC=== 3){
+    if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === 3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === 3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === 3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === 3 || clickCounter.fielfieldC+clickCounter.fieldF+clickCounter.fieldI === 3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === 3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === 3 || clickCounter.fieldG+clickCounter.fieldG+clickCounter.fieldC=== 3){
 
         $("#XWins").slideDown();
         scoreX++;
@@ -33,7 +58,7 @@ function scoreCheck(){
 
     }
    
-    if(clickCounter.qA+clickCounter.qB+clickCounter.qC === -3 || clickCounter.qA+clickCounter.qD+clickCounter.qG === -3|| clickCounter.qA+clickCounter.qE+clickCounter.qI === -3 || clickCounter.qB+clickCounter.qE+clickCounter.qH === -3 || clickCounter.qC+clickCounter.qF+clickCounter.qI === -3 || clickCounter.qD+clickCounter.qE+clickCounter.qF === -3 || clickCounter.qG+clickCounter.qH+clickCounter.qI === -3 || clickCounter.qG+clickCounter.qG+clickCounter.qC=== -3){
+    if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === -3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === -3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === -3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === -3 || clickCounter.fielfieldC+clickCounter.fieldF+clickCounter.fieldI === -3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === -3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === -3 || clickCounter.fieldG+clickCounter.fieldG+clickCounter.fieldC=== -3){
 
         $("#OWins").slideDown();
         scoreO++;
@@ -122,16 +147,27 @@ $(document).ready(function() {
 
     turn();
     roundDisplay();
-    
+    charPick();
+
+    $(".start").click(function(){
+ 
+        $(".play").show(500);
+        $(".charPick").hide(500);
+
+
+    });
+
     $(".field").click(function(){
 
         if ($(this).text() == ""){
 
-            if (turnCounter === 1){ $(this).text('c').hide().slideDown(700);
+            if (turnCounter === 1){ 
+                
+                $(this).text($('#XPick').text()).hide().slideDown(700);
 
-                let qX = this.id
+                let fieldX = this.id
                 for(key in clickCounter){
-                    if(key === qX){
+                    if(key === fieldX){
                         clickCounter[key]+=1;
                     }
                 }
@@ -142,11 +178,12 @@ $(document).ready(function() {
             }
 
             else if (turnCounter === -1){ 
-                $(this).text('B').hide().slideDown(700);
+                
+                $(this).text($('#OPick').text()).hide().slideDown(700);
 
-                let qX = this.id
+                let fieldX = this.id
                 for(key in clickCounter){
-                    if(key === qX){
+                    if(key === fieldX){
                         clickCounter[key]-=1;
                     }
                 }
@@ -196,6 +233,8 @@ $(document).ready(function() {
     $( ".restart" ).click(function() {
 
         $( ".field" ).text("");
+        $('#XPick').text("");
+        $('#OPick').text("");
 
         for (key in clickCounter){
             clickCounter[key] = 0;
@@ -212,12 +251,16 @@ $(document).ready(function() {
         lastWin = 0;
         fieldCounter = 0;
         roundCounter = 0;
+        bonesToken = "";
+        skullsToken = "";
 
         $("#bonesScore").text(`${scoreX}`)
         $("#skullScore").text(`${scoreX}`)
+
     
         turn();
         roundDisplay();
+        charPick();
 
     });
 });

@@ -12,68 +12,99 @@
   </head>
 
   <body>
-<div class="maincontent">
-    <div class="top">
-          <div id='headText'>
+
+    <div class="maincontent">
+
+
+      <div class="top">
+        <div id='headText'>
           <h1 color="ligthgray">SKULLS & BONES</h1>
           <h3>The absolute Tic Tac Toe game</h3>
-          </div>
-
         </div>
 
+      </div>
 
-        <div class="scorePanel" id="score1">
-          <h1>Team Skulls Score:</h1><h1 id="skullScore">0</h1>
+      <div class="charPick">
+        <h3>PICK YoUR TEAM ToKEN</h3>
+
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action">Bones team:</a>
+        
+          <a href="#" class="list-group-item list-group-item-action list-group-item-dark pick pickX">c</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-dark pick pickX">C</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-dark pick pickX">^</a>
         </div>
-        <div class="scorePanel" id="score2">
-          <h1>Team Bones Score:</h1><h1 id="bonesScore">0</h1>
+           
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action">Skulls team:</a>
+        
+          <a href="#" class="list-group-item list-group-item-action list-group-item-dark pick pickO">B</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-dark pick pickO">a</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-dark pick pickO">d</a>
         </div>
 
-        <div class="turnCount">
-          <h1 id="round"></h1>      
-          <h1 id="skullTurn">Skulls team turn</h1>
-          <h1 id="bonesTurn">Bones team turn</h1>
-          <h1 id="winning"></h1>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action pick"><span id="XPick"></span><span id="vs"> VS </span><span id="OPick"></span></a>
+        </div>
+
+        <button type="button" class="start btn btn-secondary btn-lg">Start</button>
+
+      </div>
+
+      <div class="play">
+      <div class="scorePanel" id="score1">
+        <h1>Team Skulls Score:</h1><h1 id="skullScore">0</h1>
+      </div>
+      <div class="scorePanel" id="score2">
+        <h1>Team Bones Score:</h1><h1 id="bonesScore">0</h1>
+      </div>
+
+      <div class="turnCount">
+        <h1 id="round"></h1>      
+        <h1 id="skullTurn">Skulls team turn</h1>
+        <h1 id="bonesTurn">Bones team turn</h1>
+        <h1 id="winning"></h1>
           <h1 id="noTurn">Start a new round...</h1>
+      </div>
+
+      <div class="gameCanvas">
+
+      <div class="row">
+        <div class='field' id='fieldA'></div>
+        <div class='field' id='fieldB'></div>
+        <div class='field' id='fieldC'></div>
+      </div>
+
+      <div class="row">
+        <div class='field' id='fieldD'></div>
+        <div class='field' id='fieldE'></div>
+        <div class='field' id='fieldF'></div>
+      </div>
+
+      <div class="row">
+        <div class='field' id='fieldG'></div>
+        <div class='field' id='fieldH'></div>
+        <div class='field' id='fieldI'></div>
+      </div>
+
+          </div>
+
+      <div class="winMessage">
+            
+        <div id="OWins">
+          <h2>TEAM SKULLS - ROUND WON!</h2>
+        </div>      
+            
+        <div id="XWins">
+          <h2>TEAM BONES - ROUND WON!</h2>
         </div>
-
-        <div class="gameCanvas">
-
-          <div class="row">
-            <div class='field' id='qA'></div>
-            <div class='field' id='qB'></div>
-            <div class='field' id='qC'></div>
-          </div>
-
-          <div class="row">
-            <div class='field' id='qD'></div>
-            <div class='field' id='qE'></div>
-            <div class='field' id='qF'></div>
-          </div>
-
-          <div class="row">
-            <div class='field' id='qG'></div>
-            <div class='field' id='qH'></div>
-            <div class='field' id='qI'></div>
-          </div>
-
-        </div>
-
-        <div class="winMessage">
-          
-          <div id="OWins">
-            <h2>TEAM SKULLS - ROUND WON!</h2>
-          </div>      
-          
-          <div id="XWins">
-            <h2>TEAM BONES - ROUND WON!</h2>
-          </div>
+      </div>
+      
+      <button type="button" class="playAgain btn btn-secondary btn-lg">Next Round</button>
+      <button type="button" class="restart btn btn-secondary btn-lg">Restart</button>
+    
     </div>
-  
-    <button type="button" class="playAgain btn btn-secondary btn-lg">Next Round</button>
-    <button type="button" class="restart btn btn-secondary btn-lg">Restart</button>
-
-  </div>
+    </div>
   </body>
 
 </html>

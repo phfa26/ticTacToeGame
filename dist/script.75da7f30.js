@@ -119,15 +119,15 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"script.js":[function(require,module,exports) {
 var clickCounter = {
-  qA: 0,
-  qB: 0,
-  qC: 0,
-  qD: 0,
-  qE: 0,
-  qF: 0,
-  qG: 0,
-  qH: 0,
-  qI: 0
+  fieldA: 0,
+  fieldB: 0,
+  fieldC: 0,
+  fieldD: 0,
+  fieldE: 0,
+  fieldF: 0,
+  fieldG: 0,
+  fieldH: 0,
+  fieldI: 0
 };
 var turnCounter = 1;
 var scoreX = 0;
@@ -136,8 +136,29 @@ var lastWin = 0;
 var roundCounter = 0;
 var fieldCounter = 0;
 
+function charPick() {
+  $(".play").hide();
+  $(".start").hide();
+  $(".charPick").fadeIn();
+
+  function showStart() {
+    if ($("#OPick").text() !== "" && $("#XPick").text() !== "") {
+      $(".start").fadeIn();
+    }
+  }
+
+  $(".pickX").click(function () {
+    $('#XPick').text($(this).text());
+    showStart();
+  });
+  $(".pickO").click(function () {
+    $('#OPick').text($(this).text());
+    showStart();
+  });
+}
+
 function scoreCheck() {
-  if (clickCounter.qA + clickCounter.qB + clickCounter.qC === 3 || clickCounter.qA + clickCounter.qD + clickCounter.qG === 3 || clickCounter.qA + clickCounter.qE + clickCounter.qI === 3 || clickCounter.qB + clickCounter.qE + clickCounter.qH === 3 || clickCounter.qC + clickCounter.qF + clickCounter.qI === 3 || clickCounter.qD + clickCounter.qE + clickCounter.qF === 3 || clickCounter.qG + clickCounter.qH + clickCounter.qI === 3 || clickCounter.qG + clickCounter.qG + clickCounter.qC === 3) {
+  if (clickCounter.fieldA + clickCounter.fieldB + clickCounter.fieldC === 3 || clickCounter.fieldA + clickCounter.fieldD + clickCounter.fieldG === 3 || clickCounter.fieldA + clickCounter.fieldE + clickCounter.fieldI === 3 || clickCounter.fieldB + clickCounter.fieldE + clickCounter.fieldH === 3 || clickCounter.fielfieldC + clickCounter.fieldF + clickCounter.fieldI === 3 || clickCounter.fieldD + clickCounter.fieldE + clickCounter.fieldF === 3 || clickCounter.fieldG + clickCounter.fieldH + clickCounter.fieldI === 3 || clickCounter.fieldG + clickCounter.fieldG + clickCounter.fieldC === 3) {
     $("#XWins").slideDown();
     scoreX++;
     roundCounter++;
@@ -148,7 +169,7 @@ function scoreCheck() {
     $("#bonesScore").text("".concat(scoreX));
   }
 
-  if (clickCounter.qA + clickCounter.qB + clickCounter.qC === -3 || clickCounter.qA + clickCounter.qD + clickCounter.qG === -3 || clickCounter.qA + clickCounter.qE + clickCounter.qI === -3 || clickCounter.qB + clickCounter.qE + clickCounter.qH === -3 || clickCounter.qC + clickCounter.qF + clickCounter.qI === -3 || clickCounter.qD + clickCounter.qE + clickCounter.qF === -3 || clickCounter.qG + clickCounter.qH + clickCounter.qI === -3 || clickCounter.qG + clickCounter.qG + clickCounter.qC === -3) {
+  if (clickCounter.fieldA + clickCounter.fieldB + clickCounter.fieldC === -3 || clickCounter.fieldA + clickCounter.fieldD + clickCounter.fieldG === -3 || clickCounter.fieldA + clickCounter.fieldE + clickCounter.fieldI === -3 || clickCounter.fieldB + clickCounter.fieldE + clickCounter.fieldH === -3 || clickCounter.fielfieldC + clickCounter.fieldF + clickCounter.fieldI === -3 || clickCounter.fieldD + clickCounter.fieldE + clickCounter.fieldF === -3 || clickCounter.fieldG + clickCounter.fieldH + clickCounter.fieldI === -3 || clickCounter.fieldG + clickCounter.fieldG + clickCounter.fieldC === -3) {
     $("#OWins").slideDown();
     scoreO++;
     roundCounter++;
@@ -232,14 +253,19 @@ $(document).ready(function () {
   $(".playAgain").hide();
   turn();
   roundDisplay();
+  charPick();
+  $(".start").click(function () {
+    $(".play").show(500);
+    $(".charPick").hide(500);
+  });
   $(".field").click(function () {
     if ($(this).text() == "") {
       if (turnCounter === 1) {
-        $(this).text('c').hide().slideDown(700);
-        var qX = this.id;
+        $(this).text($('#XPick').text()).hide().slideDown(700);
+        var fieldX = this.id;
 
         for (key in clickCounter) {
-          if (key === qX) {
+          if (key === fieldX) {
             clickCounter[key] += 1;
           }
         }
@@ -248,11 +274,11 @@ $(document).ready(function () {
         fieldCounter++;
         scoreCheck();
       } else if (turnCounter === -1) {
-        $(this).text('B').hide().slideDown(700);
-        var _qX = this.id;
+        $(this).text($('#OPick').text()).hide().slideDown(700);
+        var _fieldX = this.id;
 
         for (key in clickCounter) {
-          if (key === _qX) {
+          if (key === _fieldX) {
             clickCounter[key] -= 1;
           }
         }
@@ -296,6 +322,8 @@ $(document).ready(function () {
   });
   $(".restart").click(function () {
     $(".field").text("");
+    $('#XPick').text("");
+    $('#OPick').text("");
 
     for (key in clickCounter) {
       clickCounter[key] = 0;
@@ -311,10 +339,13 @@ $(document).ready(function () {
     lastWin = 0;
     fieldCounter = 0;
     roundCounter = 0;
+    bonesToken = "";
+    skullsToken = "";
     $("#bonesScore").text("".concat(scoreX));
     $("#skullScore").text("".concat(scoreX));
     turn();
     roundDisplay();
+    charPick();
   });
 });
 },{}],"../../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -345,7 +376,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50970" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49862" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
