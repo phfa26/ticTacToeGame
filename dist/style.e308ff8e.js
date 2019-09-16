@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./images/skullsBG.png":[["skullsBG.9eca26a6.png","images/skullsBG.png"],"images/skullsBG.png"],"./fonts/webfontkit-20190908-023435/xbones3ditalic-8pgj-webfont.woff":[["xbones3ditalic-8pgj-webfont.fbfc655d.woff","fonts/webfontkit-20190908-023435/xbones3ditalic-8pgj-webfont.woff"],"fonts/webfontkit-20190908-023435/xbones3ditalic-8pgj-webfont.woff"],"./fonts/webfontkit-20190908-022434/evilz-webfont.woff":[["evilz-webfont.7fdfcd48.woff","fonts/webfontkit-20190908-022434/evilz-webfont.woff"],"fonts/webfontkit-20190908-022434/evilz-webfont.woff"],"_css_loader":"../../../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js"}],"../../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./images/skullsBG.png":[["skullsBG.9eca26a6.png","images/skullsBG.png"],"images/skullsBG.png"],"./fonts/xbones3ditalic-8pgj-webfont.woff":[["xbones3ditalic-8pgj-webfont.1c61a490.woff","fonts/xbones3ditalic-8pgj-webfont.woff"],"fonts/xbones3ditalic-8pgj-webfont.woff"],"./fonts/evilz-webfont.woff":[["evilz-webfont.9fbfa6a5.woff","fonts/evilz-webfont.woff"],"fonts/evilz-webfont.woff"],"_css_loader":"../../../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js"}],"../../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49862" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49352" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

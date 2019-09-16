@@ -169,15 +169,15 @@ h1{
 
 @font-face{ 
 	font-family: 'xbones';
-	src: url('/xbones3ditalic-8pgj-webfont.fbfc655d.woff');
-	src: url('/xbones3ditalic-8pgj-webfont.fbfc655d.woff') format('woff');
+	src: url('/xbones3ditalic-8pgj-webfont.1c61a490.woff');
+	src: url('/xbones3ditalic-8pgj-webfont.1c61a490.woff') format('woff');
 
 }
 
 @font-face{ 
 	font-family: 'evil';
-	src: url('/evilz-webfont.7fdfcd48.woff');
-    src: url('/evilz-webfont.7fdfcd48.woff') format('woff');
+	src: url('/evilz-webfont.9fbfa6a5.woff');
+    src: url('/evilz-webfont.9fbfa6a5.woff') format('woff');
 }
 
 

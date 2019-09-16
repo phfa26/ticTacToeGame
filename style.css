@@ -169,13 +169,13 @@ h1{
 
 @font-face{ 
 	font-family: 'xbones';
-	src: url('fonts/webfontkit-20190908-023435/xbones3ditalic-8pgj-webfont.woff');
-	src: url('fonts/webfontkit-20190908-023435/xbones3ditalic-8pgj-webfont.woff') format('woff');
+	src: url('fonts/xbones3ditalic-8pgj-webfont.woff');
+	src: url('fonts/xbones3ditalic-8pgj-webfont.woff') format('woff');
 
 }
 
 @font-face{ 
 	font-family: 'evil';
-	src: url('fonts/webfontkit-20190908-022434/evilz-webfont.woff');
-    src: url('fonts/webfontkit-20190908-022434/evilz-webfont.woff') format('woff');
+	src: url('fonts/evilz-webfont.woff');
+    src: url('fonts/evilz-webfont.woff') format('woff');
 }
