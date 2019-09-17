@@ -47,29 +47,41 @@ function charPick(){
 
 function scoreCheck(){
 
-    if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === 3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === 3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === 3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === 3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === 3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === 3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === 3 || clickCounter.fieldG+clickCounter.fieldE+clickCounter.fieldC=== 3){
+    function win(){
+        if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === 3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === 3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === 3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === 3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === 3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === 3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === 3 || clickCounter.fieldG+clickCounter.fieldE+clickCounter.fieldC=== 3){
 
-        $("#XWins").slideDown();
-        scoreX++; //adds to X score.
-        roundCounter++; //turns round display to next round.
-        turnCounter = 0; //Ends game (no field click is possible if turnCounter is not 1 or -1).
-        lastWin = 1;
-        $(".playAgain").fadeIn(1000);
-        $("#bonesScore").text(`${scoreX}`)
+            $("#XWins").slideDown();
+            scoreX++; //adds to X score.
+            roundCounter++; //turns round display to next round.
+            turnCounter = 0; //Ends game (no field click is possible if turnCounter is not 1 or -1).
+            lastWin = 1;
+            $(".playAgain").fadeIn(1000);
+            $("#bonesScore").text(`${scoreX}`)
 
-    }//check for possible winnings combinations for X team after every play.
-   
-    if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === -3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === -3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === -3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === -3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === -3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === -3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === -3 || clickCounter.fieldG+clickCounter.fieldE+clickCounter.fieldC=== -3){
+        }//check for possible winnings combinations for X team after every play.
+    
+        if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === -3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === -3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === -3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === -3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === -3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === -3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === -3 || clickCounter.fieldG+clickCounter.fieldE+clickCounter.fieldC=== -3){
 
-        $("#OWins").slideDown();
-        scoreO++;//adds to O score.
-        roundCounter++;//turns round display to next round.
-        turnCounter = 0; //Ends game (no field click is possible if turnCounter is not 1 or -1).
-        lastWin = -1;
-        $(".playAgain").fadeIn(1000);
-        $("#skullScore").text(`${scoreO}`)
+            $("#OWins").slideDown();
+            scoreO++;//adds to O score.
+            roundCounter++;//turns round display to next round.
+            turnCounter = 0; //Ends game (no field click is possible if turnCounter is not 1 or -1).
+            lastWin = -1;
+            $(".playAgain").fadeIn(1000);
+            $("#skullScore").text(`${scoreO}`)
 
-    }//check for possible winnings combinations for O team after every play.
+        }//check for possible winnings combinations for O team after every play.
+
+        else if(fieldCounter == 9){
+            $("#winning").text("CAT'S GAME!").show(500);
+            roundCounter++;
+            turnCounter = 0; //Ends game (no field click is possible if turnCounter is not 1 or -1).
+            $(".playAgain").fadeIn(1000);
+        }
+
+    }
+    
+    win();
 
     if((scoreX == 2) || (roundCounter == 3 && scoreX > scoreO)){
         $("#winning").text("TEAM BONES WINS!").show(500);
@@ -83,18 +95,10 @@ function scoreCheck(){
         $(".playAgain").hide();
     }
 
-    else if(fieldCounter == 9){
-        $("#winning").text("CAT'S GAME!").show(500);
-        roundCounter++;
-        turnCounter = 0; //Ends game (no field click is possible if turnCounter is not 1 or -1).
-       $(".playAgain").fadeIn(1000);
-    }
-
-    else if (roundCounter == 3 && scoreX == scoreO){
+    if (roundCounter == 3 && scoreX == scoreO){
         $("#winning").text(`OH NO! Is it a draw? Is it a tie? NAH... IT IS "CAT'S GAME!"`).show(500);
         $(".playAgain").hide();
     }// If it comes to end of third round and there is no winner or scores are tight, it is 'cat's game'.
-
     
 }
 
@@ -113,6 +117,10 @@ function roundDisplay(){
     if(round == 2){
         $("#round").text("Third Round").fadeIn();
     }
+
+    if(round > 2){
+        $("#round").text("ERROR").fadeIn();
+    }//SHOULD NOT HAPPEN!! EVER
 
 }//Based on the round counter, a message is displayed on screen as a round counter.
 
