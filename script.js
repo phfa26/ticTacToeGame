@@ -47,7 +47,7 @@ function charPick(){
 
 function scoreCheck(){
 
-    if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === 3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === 3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === 3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === 3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === 3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === 3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === 3 || clickCounter.fieldG+clickCounter.fieldG+clickCounter.fieldC=== 3){
+    if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === 3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === 3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === 3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === 3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === 3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === 3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === 3 || clickCounter.fieldG+clickCounter.fieldE+clickCounter.fieldC=== 3){
 
         $("#XWins").slideDown();
         scoreX++; //adds to X score.
@@ -59,7 +59,7 @@ function scoreCheck(){
 
     }//check for possible winnings combinations for X team after every play.
    
-    if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === -3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === -3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === -3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === -3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === -3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === -3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === -3 || clickCounter.fieldG+clickCounter.fieldG+clickCounter.fieldC=== -3){
+    if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === -3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === -3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === -3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === -3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === -3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === -3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === -3 || clickCounter.fieldG+clickCounter.fieldE+clickCounter.fieldC=== -3){
 
         $("#OWins").slideDown();
         scoreO++;//adds to O score.
@@ -70,13 +70,6 @@ function scoreCheck(){
         $("#skullScore").text(`${scoreO}`)
 
     }//check for possible winnings combinations for O team after every play.
-
-    if(fieldCounter == 9){
-        $("#winning").text("CAT'S GAME!").show(500);
-        roundCounter++;
-        turnCounter = 0; //Ends game (no field click is possible if turnCounter is not 1 or -1).
-       $(".playAgain").fadeIn(1000);
-    }
 
     if((scoreX == 2) || (roundCounter == 3 && scoreX > scoreO)){
         $("#winning").text("TEAM BONES WINS!").show(500);
@@ -90,11 +83,19 @@ function scoreCheck(){
         $(".playAgain").hide();
     }
 
-    if (roundCounter == 3 && scoreX == scoreO){
+    else if(fieldCounter == 9){
+        $("#winning").text("CAT'S GAME!").show(500);
+        roundCounter++;
+        turnCounter = 0; //Ends game (no field click is possible if turnCounter is not 1 or -1).
+       $(".playAgain").fadeIn(1000);
+    }
+
+    else if (roundCounter == 3 && scoreX == scoreO){
         $("#winning").text(`OH NO! Is it a draw? Is it a tie? NAH... IT IS "CAT'S GAME!"`).show(500);
         $(".playAgain").hide();
     }// If it comes to end of third round and there is no winner or scores are tight, it is 'cat's game'.
 
+    
 }
 
 function roundDisplay(){
@@ -155,6 +156,11 @@ $(document).ready(function() {
  
         $(".play").show(500);
         $(".charPick").hide(500);
+        event.preventDefault();
+        // Getting the height of the document
+        var n = $(document).height();
+      //  $('html, body').animate({ scrollTop: n }, 50);
+        $("html, body").animate({scrollTop: 115}, 1000);
 
 
     });//Displays the gamimg area and hides the icon selection screen.
@@ -263,6 +269,7 @@ $(document).ready(function() {
         turn();
         roundDisplay();
         charPick();
+        $("html, body").animate({scrollTop: 0}, 1000);
 
     });
 });
