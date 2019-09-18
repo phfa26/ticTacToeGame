@@ -194,6 +194,7 @@ $(document).ready(function() {
             clickCounter[key] = 0; // Reset all fields points to 0.
         }
 
+        $("html, body").animate({scrollTop: 115}, 1000);
         $("#XWins").slideUp();
         $("#OWins").slideUp();
         $(".playAgain").fadeOut(1000);
