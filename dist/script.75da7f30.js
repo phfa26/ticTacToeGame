@@ -273,6 +273,9 @@ $(document).ready(function () {
   $("#bonesTurn").hide();
   $("#noTurn").hide();
   $(".playAgain").hide();
+  $("html, body").animate({
+    scrollTop: 0
+  }, 1000);
   turn();
   roundDisplay();
   charPick();
@@ -310,6 +313,9 @@ $(document).ready(function () {
       clickCounter[key] = 0; // Reset all fields points to 0.
     }
 
+    $("html, body").animate({
+      scrollTop: 115
+    }, 1000);
     $("#XWins").slideUp();
     $("#OWins").slideUp();
     $(".playAgain").fadeOut(1000);
@@ -422,7 +428,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50417" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60344" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -149,6 +149,7 @@ $(document).ready(function() {
     $("#bonesTurn").hide();
     $("#noTurn").hide();
     $(".playAgain").hide();
+    $("html, body").animate({scrollTop: 0}, 1000);
 
     turn();
     roundDisplay();
