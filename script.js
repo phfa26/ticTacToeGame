@@ -48,7 +48,7 @@ function charPick(){
 
 function scoreCheck(){
 
-    function win(){
+    function roundWin(){ //In this function is where the checks for the rounds wins happen. That is why it is put separately from the bnottom part, where the overall match is checked.  
         
         if(clickCounter.fieldA+clickCounter.fieldB+clickCounter.fieldC === 3 || clickCounter.fieldA+clickCounter.fieldD+clickCounter.fieldG === 3|| clickCounter.fieldA+clickCounter.fieldE+clickCounter.fieldI === 3 || clickCounter.fieldB+clickCounter.fieldE+clickCounter.fieldH === 3 || clickCounter.fieldC+clickCounter.fieldF+clickCounter.fieldI === 3 || clickCounter.fieldD+clickCounter.fieldE+clickCounter.fieldF === 3 || clickCounter.fieldG+clickCounter.fieldH+clickCounter.fieldI === 3 || clickCounter.fieldG+clickCounter.fieldE+clickCounter.fieldC=== 3){
 
@@ -85,7 +85,7 @@ function scoreCheck(){
 
     }
 
-    win();
+    roundWin();
 
     if((scoreX == 2) || (roundCounter == 3 && scoreX > scoreO)){
         $("#winning").text("TEAM BONES WINS!").show(500);
@@ -103,7 +103,7 @@ function scoreCheck(){
         $("#winning").text(`OH NO! Is it a draw? Is it a tie? NAH... IT IS "CAT'S GAME!"`).show(500);
         $(".playAgain").hide();
     }// If it comes to end of third round and there is no winner or scores are tight, it is 'cat's game'.
-    
+    //This bottom part of the function is where the overall match winning condition is checked.
 }
 
 function roundDisplay(){
