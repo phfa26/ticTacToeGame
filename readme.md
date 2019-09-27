@@ -71,7 +71,7 @@ Features to be implemented:
 
 Bugs:  
 
-- On extra large screens the background does not cover all the way down to the bottom of the screen.
+- No known bugs.
 - If you find one, or have any sugestion of improvement,  
     please fell free to contact the developer on  
     contact@skullsandbonestictactoe.com .  
