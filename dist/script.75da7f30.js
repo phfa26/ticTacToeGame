@@ -161,36 +161,32 @@ function charPick() {
 }
 
 function scoreCheck() {
-  function roundWin() {
-    if (clickCounter.fieldA + clickCounter.fieldB + clickCounter.fieldC === 3 || clickCounter.fieldA + clickCounter.fieldD + clickCounter.fieldG === 3 || clickCounter.fieldA + clickCounter.fieldE + clickCounter.fieldI === 3 || clickCounter.fieldB + clickCounter.fieldE + clickCounter.fieldH === 3 || clickCounter.fieldC + clickCounter.fieldF + clickCounter.fieldI === 3 || clickCounter.fieldD + clickCounter.fieldE + clickCounter.fieldF === 3 || clickCounter.fieldG + clickCounter.fieldH + clickCounter.fieldI === 3 || clickCounter.fieldG + clickCounter.fieldE + clickCounter.fieldC === 3) {
-      $("#XWins").slideDown();
-      scoreX++;
-      roundCounter++;
-      turnCounter = 0;
-      lastWin = 1;
-      isMatchWon = true;
-      $(".playAgain").fadeIn(1000);
-      $("#bonesScore").text("".concat(scoreX));
-    }
-
-    if (clickCounter.fieldA + clickCounter.fieldB + clickCounter.fieldC === -3 || clickCounter.fieldA + clickCounter.fieldD + clickCounter.fieldG === -3 || clickCounter.fieldA + clickCounter.fieldE + clickCounter.fieldI === -3 || clickCounter.fieldB + clickCounter.fieldE + clickCounter.fieldH === -3 || clickCounter.fieldC + clickCounter.fieldF + clickCounter.fieldI === -3 || clickCounter.fieldD + clickCounter.fieldE + clickCounter.fieldF === -3 || clickCounter.fieldG + clickCounter.fieldH + clickCounter.fieldI === -3 || clickCounter.fieldG + clickCounter.fieldE + clickCounter.fieldC === -3) {
-      $("#OWins").slideDown();
-      scoreO++;
-      roundCounter++;
-      turnCounter = 0;
-      lastWin = -1;
-      isMatchWon = true;
-      $(".playAgain").fadeIn(1000);
-      $("#skullScore").text("".concat(scoreO));
-    } else if (fieldCounter == 9 && isMatchWon === false) {
-      $("#winning").text("CAT'S GAME!").show(500);
-      roundCounter++;
-      turnCounter = 0;
-      $(".playAgain").fadeIn(1000);
-    }
+  if (clickCounter.fieldA + clickCounter.fieldB + clickCounter.fieldC === 3 || clickCounter.fieldA + clickCounter.fieldD + clickCounter.fieldG === 3 || clickCounter.fieldA + clickCounter.fieldE + clickCounter.fieldI === 3 || clickCounter.fieldB + clickCounter.fieldE + clickCounter.fieldH === 3 || clickCounter.fieldC + clickCounter.fieldF + clickCounter.fieldI === 3 || clickCounter.fieldD + clickCounter.fieldE + clickCounter.fieldF === 3 || clickCounter.fieldG + clickCounter.fieldH + clickCounter.fieldI === 3 || clickCounter.fieldG + clickCounter.fieldE + clickCounter.fieldC === 3) {
+    $("#XWins").slideDown();
+    scoreX++;
+    roundCounter++;
+    turnCounter = 0;
+    lastWin = 1;
+    isMatchWon = true;
+    $(".playAgain").fadeIn(1000);
+    $("#bonesScore").text("".concat(scoreX));
   }
 
-  roundWin();
+  if (clickCounter.fieldA + clickCounter.fieldB + clickCounter.fieldC === -3 || clickCounter.fieldA + clickCounter.fieldD + clickCounter.fieldG === -3 || clickCounter.fieldA + clickCounter.fieldE + clickCounter.fieldI === -3 || clickCounter.fieldB + clickCounter.fieldE + clickCounter.fieldH === -3 || clickCounter.fieldC + clickCounter.fieldF + clickCounter.fieldI === -3 || clickCounter.fieldD + clickCounter.fieldE + clickCounter.fieldF === -3 || clickCounter.fieldG + clickCounter.fieldH + clickCounter.fieldI === -3 || clickCounter.fieldG + clickCounter.fieldE + clickCounter.fieldC === -3) {
+    $("#OWins").slideDown();
+    scoreO++;
+    roundCounter++;
+    turnCounter = 0;
+    lastWin = -1;
+    isMatchWon = true;
+    $(".playAgain").fadeIn(1000);
+    $("#skullScore").text("".concat(scoreO));
+  } else if (fieldCounter == 9 && isMatchWon === false) {
+    $("#winning").text("CAT'S GAME! - ROUND DRAWN").show(500);
+    roundCounter++;
+    turnCounter = 0;
+    $(".playAgain").fadeIn(1000);
+  }
 
   if (scoreX == 2 || roundCounter == 3 && scoreX > scoreO) {
     $("#winning").text("TEAM BONES WINS!").show(500);
@@ -205,13 +201,13 @@ function scoreCheck() {
   }
 
   if (roundCounter == 3 && scoreX == scoreO) {
-    $("#winning").text("OH NO! Is it a draw? Is it a tie? NAH... IT IS \"CAT'S GAME!\"").show(500);
+    $("#winning").text("IT IS A \"CAT'S GAME!\" - MATCH DRAWN").show(500);
     $(".playAgain").hide();
   }
 }
 
 function roundDisplay() {
-  var roundMessages = ['1st Round', '2nd round', '3rd round', 'ERROR!'];
+  var roundMessages = ['1st Round', '2nd round', '3rd round'];
 
   for (message in roundMessages) {
     if (message == roundCounter) {
@@ -384,7 +380,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49438" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59266" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
